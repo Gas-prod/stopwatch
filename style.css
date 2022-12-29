@@ -1,0 +1,308 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.5s;
+}
+
+body
+{
+    --bg-color: #000000;
+    --object-color: #1B1D23;
+    --text-color: #DDEBF8;
+    --primary-color: #0049F5;
+    --primary-button-color: #DDEBF8;
+    --border-color: rgba(221, 235, 248, 0.4);
+    --shadow: none;
+}
+
+@media (prefers-color-scheme: light) {
+    body
+    {
+        --bg-color: #ffffff;
+        --object-color: #DDEBF8;
+        --text-color: #272932;
+        --primary-color: #0049F5;
+        --primary-button-color: #DDEBF8;
+        --border-color: rgba(39, 41, 50, 0.4);
+        --shadow: 0 0 20px rgba(0, 73, 245, 0.2);
+    }
+}
+
+html, body
+{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: var(--bg-color);
+}
+.material-symbols-rounded
+{
+    font-size: 36px;
+    color: var(--text-color);
+}
+button
+{
+    cursor: pointer;
+}
+p, h1, a
+{
+    font-family: 'Sora', sans-serif;
+    color: var(--text-color);
+    padding: 0;
+    margin: 0;
+}
+h1
+{
+    font-weight: 700;
+    letter-spacing: 4%;
+}
+p, a
+{
+    font-weight: 400;
+}
+
+header
+{
+    height: 80px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+header button
+{
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    right: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+header h1
+{
+    font-size: 40px;
+}
+
+.content
+{
+    padding: 24px;
+    height: calc(100% - 140px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.select
+{
+    background-color: var(--object-color);
+    display: flex;
+    border: 1px solid var(--border-color);
+    border-radius: 32px;
+    overflow: hidden;
+    margin-bottom: 80px;
+    box-shadow: var(--shadow);
+}
+.select button
+{
+    border: none;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 14px;
+    color: var(--text-color);
+}
+.button-focus
+{
+    color: var(--primary-button-color) !important;
+    background-color: var(--primary-color) !important;
+    font-variation-settings: 'FILL' 1;
+}
+.select button span
+{
+    color: inherit;
+}
+
+
+.container
+{
+    display: none;
+    background-color: var(--object-color);
+    width: 100%;
+    height: 200px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    position: relative;
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: height 0.3s ease-in-out;
+    box-shadow: var(--shadow);
+}
+.open
+{
+    display: flex;
+}
+.landscape
+{
+    height: calc(100% - 100px);
+}
+#timer-container
+{
+    animation: slide-from-right 0.2s ease-in-out;
+}
+.container h1
+{
+    font-size: 48px;
+    margin: 12px 0;
+}
+.container p 
+{
+    font-size: 24px;
+}
+.container > button
+{
+    position: absolute;
+    right: 18px;
+    bottom: 8px;
+    border: none;
+    background-color: transparent;
+    width: 36px;
+    transition: rotate 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-variation-settings: 'FILL' 1;
+}
+.landscape > button
+{
+    rotate: 90deg;
+    left: 12px;
+    bottom: 8px;
+}
+#clock-container #date-text, #timer-container > div
+{
+    transition: rotate 0.2s ease-in-out, transform 0.4s;
+}
+#clock-container.landscape #date-text, #timer-container.landscape > div
+{
+    rotate: 90deg;
+}
+#clock-container h1
+{
+    font-size: 36px;
+}
+#timer-container > div
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container > div
+{
+    transition: transform 0.4s;
+}
+#timer-container .buttons
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 36px;
+}
+#timer-container .buttons button
+{
+    background-color: transparent;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#start-stop
+{
+    margin-right: 24px;
+}
+
+.landscape > div
+{
+    transform: scale(1.6);
+}
+
+footer
+{
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer a
+{
+    text-decoration: none;
+    font-size: 24px;
+}
+
+@keyframes slide-from-left {
+    0%
+    {
+        transform: translateX(-100%);
+    }
+    100%
+    {
+        transform: translateX(0);
+    }
+}
+@keyframes slide-from-right {
+    0%
+    {
+        transform: translateX(100%);
+    }
+    100%
+    {
+        transform: translateX(0);
+    }
+}
+
+@media only screen and (orientation: landscape) {
+    .container > button
+    {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    #timer-text
+    {
+        font-size: 36px;
+    }
+    #clock-container h1
+    {
+        font-size: 24px;
+    }
+    .landscape h1
+    {
+        margin: 0;
+    }
+    #clock-container.landscape h1
+    {
+        font-size: 28px;
+    }
+}
+
+@media only screen and (max-height: 750px) {
+    #clock-container > div
+    {
+        transform: scale(1.2); 
+    }
+    #timer-container > div
+    {
+        transform: scale(1.2);
+    }
+}

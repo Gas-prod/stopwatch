@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Sora:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>TIMER</h1>
+        <button id="theme-switcher"><span class="material-symbols-rounded">light_mode</span></button>
+    </header>
+
+    <div class="content">
+        <div class="select">
+            <button id="clock-button" class="button-focus">
+                <span class="material-symbols-rounded">schedule</span>
+            </button>
+            <button id="timer-button">
+                <span class="material-symbols-rounded">timer</span>
+            </button>
+        </div>
+
+        <div class="container open" id="clock-container">
+            <div>
+                <h1 id="date-text">--h --min --s</h1>
+            </div>
+
+            <button id="clock-rotate-button">
+                <span class="material-symbols-rounded">stay_current_landscape</span>
+            </button>
+        </div>
+
+        <div class="container" id="timer-container">
+            <div>
+                <p id="min-date">--h --min</p>
+    
+                <div>
+                    <h1 id="timer-text">00:00:00</h1>
+                </div>
+    
+                <div class="buttons">
+                    <button id="start-stop">
+                        <span class="material-symbols-rounded">
+                            play_arrow
+                        </span>
+                    </button>
+                    <button id="reset">
+                        <span class="material-symbols-rounded">
+                            stop
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+            <button id="timer-rotate-button">
+                <span class="material-symbols-rounded">stay_current_landscape</span>
+            </button>
+        </div>
+    </div>
+
+    <footer>
+        <a href="https://gas-prod.github.io/Link" target="_blank">By Gas</a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
