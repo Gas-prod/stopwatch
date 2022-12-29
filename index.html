@@ -17,12 +17,17 @@
     <link href="style.css" rel="stylesheet">
     <link rel="manifest" href="/stopwatch/manifest.json">
 
+    <script src="nosleep.js"></script>
     
     <script>
+        let noSleep = new NoSleep()
+
         window.addEventListener("load", function(){
+            noSleep.enable()
+
             if("serviceWorker" in navigator) {
-                navigator.serviceWorker.register("/stopwatch/sw.js");
-            };
+                navigator.serviceWorker.register("/stopwatch/sw.js")
+            }
         })
     </script>
 
