@@ -36,26 +36,23 @@
     {
       "src": "/stopwatch/img/screenshots/darkmode_1.png",
       "type": "image/png",
-      "sizes": "540x720",
+      "sizes": "1170x2532",
       "form_factor": "narrow"
     },
     {
       "src": "/stopwatch/img/screenshots/darkmode_2.png",
       "type": "image/png",
-      "sizes": "720x540",
-      "form_factor": "wide"
+      "sizes": "1170x2532"
     },
     {
       "src": "/stopwatch/img/screenshots/darkmode_3.png",
       "type": "image/png",
-      "sizes": "720x540",
-      "form_factor": "wide"
+      "sizes": "1170x2532"
     },
     {
       "src": "/stopwatch/img/screenshots/lightmode.png",
       "type": "image/png",
-      "sizes": "720x540",
-      "form_factor": "wide"
+      "sizes": "1170x2532"
     }
   ]
 }
