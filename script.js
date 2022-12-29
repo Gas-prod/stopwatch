@@ -27,7 +27,7 @@ let darkVars = {
     primaryColor: "#0049F5",
     primaryButtonColor: "#DDEBF8",
     borderColor: "rgba(221, 235, 248, 0.4)",
-    shadow: "none"
+    shadow: "0 0 0 transparent"
 }
 let lightVars = {
     bgColor: "#ffffff",
@@ -145,20 +145,20 @@ function changeTheme(){
         theme = "light"
 
         document.body.style = `
-        --bg-color:${darkVars.bgColor};
-        --object-color:${darkVars.objectColor};
-        --text-color:${darkVars.textColor};
-        --border-color:${darkVars.borderColor};
-        --shadow:${darkVars.shadow}`
-    }else{
-        theme = "dark"
-
-        document.body.style = `
         --bg-color:${lightVars.bgColor};
         --object-color:${lightVars.objectColor};
         --text-color:${lightVars.textColor};
         --border-color:${lightVars.borderColor};
         --shadow:${lightVars.shadow}`
+    }else{
+        theme = "dark"
+
+        document.body.style = `
+        --bg-color:${darkVars.bgColor};
+        --object-color:${darkVars.objectColor};
+        --text-color:${darkVars.textColor};
+        --border-color:${darkVars.borderColor};
+        --shadow:${darkVars.shadow}`
     }
 }
 

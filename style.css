@@ -15,7 +15,7 @@ body
     --primary-color: #0049F5;
     --primary-button-color: #DDEBF8;
     --border-color: rgba(221, 235, 248, 0.4);
-    --shadow: none;
+    --shadow: 0 0 0 transparent;
 }
 
 @media (prefers-color-scheme: light) {
@@ -53,6 +53,7 @@ p, h1, a
     color: var(--text-color);
     padding: 0;
     margin: 0;
+    white-space: nowrap;
 }
 h1
 {
@@ -83,12 +84,12 @@ header button
 }
 header h1
 {
-    font-size: 40px;
+    font-size: 32px;
 }
 
 .content
 {
-    padding: 24px;
+    padding: 0 24px;
     height: calc(100% - 140px);
     display: flex;
     flex-direction: column;
@@ -100,11 +101,11 @@ header h1
 {
     background-color: var(--object-color);
     display: flex;
-    border: 1px solid var(--border-color);
+    box-shadow: 0 0 0 1px var(--border-color), var(--shadow);
     border-radius: 32px;
     overflow: hidden;
     margin-bottom: 80px;
-    box-shadow: var(--shadow);
+    
 }
 .select button
 {
@@ -139,11 +140,10 @@ header h1
     align-items: center;
     padding: 12px;
     position: relative;
-    border: 1px solid var(--border-color);
     border-radius: 15px;
     overflow: hidden;
     transition: height 0.3s ease-in-out;
-    box-shadow: var(--shadow);
+    box-shadow: 0 0 0 1px var(--border-color), var(--shadow);
 }
 .open
 {
@@ -248,6 +248,51 @@ footer a
     text-decoration: none;
     font-size: 24px;
 }
+#install-alert
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    border-radius: 15px 15px 0 0;
+    background-color: var(--object-color);
+    display: none;
+    padding: 12px;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow);
+}
+#install-alert p
+{
+    font-size: 20px;
+    white-space: pre-wrap;
+}
+#install-alert > div
+{
+    display: flex;
+    align-items: center;
+}
+#install-button
+{
+    background-color: var(--primary-color);
+    color: var(--primary-button-color);
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 4%;
+    padding: 8px 24px;
+    border: none;
+    border-radius: 30px;
+    margin-right: 12px;
+}
+#dismiss-button
+{
+    background-color: transparent;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 @keyframes slide-from-left {
     0%
@@ -278,6 +323,14 @@ footer a
 }
 
 @media only screen and (max-width: 350px) {
+    header h1
+    {
+        font-size: 24px;
+    }
+    header button
+    {
+        right: 12px ;
+    }
     #timer-text
     {
         font-size: 36px;
@@ -297,12 +350,20 @@ footer a
 }
 
 @media only screen and (max-height: 750px) {
-    #clock-container > div
+    #clock-container.landscape > div
     {
         transform: scale(1.2); 
     }
-    #timer-container > div
+    #timer-container.landscape > div
     {
         transform: scale(1.2);
+    }
+    header
+    {
+        height: 60px;
+    }
+    .content
+    {
+        height: calc(100% - 120px);
     }
 }

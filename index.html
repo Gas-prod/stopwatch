@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timer</title>
+    <meta name="description" content="A simple stopwatch app">
+    <meta name="theme-color" content="#0049F5">
+
+    <title>STOPWATCH</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,10 +15,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Sora:wght@400;700&display=swap" rel="stylesheet">
     
     <link href="style.css" rel="stylesheet">
+    <link rel="manifest" href="/manifest.json">
+
+    
+    <script>
+        window.addEventListener("load", function(){
+            if("serviceWorker" in navigator) {
+                navigator.serviceWorker.register("/stopwatch/sw.js");
+            };
+        })
+    </script>
+
 </head>
 <body>
     <header>
-        <h1>TIMER</h1>
+        <h1>STOPWATCH</h1>
         <button id="theme-switcher"><span class="material-symbols-rounded">light_mode</span></button>
     </header>
 
@@ -71,6 +85,18 @@
         <a href="https://gas-prod.github.io/Link" target="_blank">By Gas</a>
     </footer>
 
+    <div id="install-alert">
+        <p>Install the app</p>
+
+        <div>
+            <button id="install-button">Install</button>
+            <button id="dismiss-button">
+                <span class="material-symbols-rounded">close</span>
+            </button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
+    <!-- <script src="A2HS.js"></script> -->
 </body>
 </html>

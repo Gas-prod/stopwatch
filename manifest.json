@@ -1,0 +1,61 @@
+{
+    "short_name": "Stopwatch",
+    "name": "Stopwatch",
+    "icons": [
+      {
+        "src": "/img/icons/512x512.png",
+        "type": "image/png",
+        "sizes": "512x512",
+        "purpose": "maskable"
+      },
+      {
+        "src": "/img/icons/192x192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/img/icons/128x128.png",
+        "type": "image/png",
+        "sizes": "128x128"
+      },
+      {
+        "src": "/img/icons/icon.png",
+        "type": "image/svg",
+        "sizes": "128x128"
+      }
+    ],
+    "start_url": "/stopwatch/",
+    "background_color": "#DDEBF8",
+    "display": "standalone",
+    "scope": "/stopwatch/",
+    "theme_color": "#0049F5",
+    "orientation": "portrait",
+    "description": "A simple stopwatch app",
+    "lang": "en",
+    "screenshots": [
+      {
+        "src": "/img/screenshots/darkmode_1.png",
+        "type": "image/png",
+        "sizes": "540x720",
+        "form_factor": "narrow"
+      },
+      {
+        "src": "/img/screenshots/darkmode_2.png",
+        "type": "image/png",
+        "sizes": "720x540",
+        "form_factor": "wide"
+      },
+      {
+        "src": "/img/screenshots/darkmode_3.png",
+        "type": "image/png",
+        "sizes": "720x540",
+        "form_factor": "wide"
+      },
+      {
+        "src": "/img/screenshots/lightmode.png",
+        "type": "image/png",
+        "sizes": "720x540",
+        "form_factor": "wide"
+      }
+    ]
+  }
