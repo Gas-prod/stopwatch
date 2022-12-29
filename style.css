@@ -105,7 +105,7 @@ header h1
     border-radius: 32px;
     overflow: hidden;
     margin-bottom: 80px;
-    
+    transition: margin-bottom 0.3S;
 }
 .select button
 {
