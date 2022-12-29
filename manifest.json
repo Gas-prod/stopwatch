@@ -21,7 +21,7 @@
     {
       "src": "/stopwatch/img/icons/icon.svg",
       "type": "image/svg",
-      "sizes": "128x128"
+      "sizes": "150x150"
     }
   ],
   "start_url": "/stopwatch/",
