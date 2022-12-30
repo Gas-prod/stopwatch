@@ -43,8 +43,8 @@ let lightVars = {
     shadow: "0 0 20px rgba(0, 73, 245, 0.2)"
 }
 
-let touchStart
-let touchEnd
+let touchStart = {x: 0, y: 0}
+let touchEnd = {x: 0, y: 0}
 
 
 if (window.matchMedia("(prefers-color-scheme: dark)").matches){
@@ -221,14 +221,16 @@ timerBtn.addEventListener("click", function(e){
 // slide
 // slide on the clock
 document.body.addEventListener("touchstart", function(e){
-    touchStart = e.targetTouches[0].clientX;
+    touchStart.x = e.targetTouches[0].clientX;
+    touchStart.y = e.targetTouches[0].clientY;
 })
 document.body.addEventListener("touchmove", function(e) {
-    touchEnd = e.targetTouches[0].clientX;
+    touchEnd.x = e.targetTouches[0].clientX;
+    touchEnd.y = e.targetTouches[0].clientY;
 })
 document.body.addEventListener("touchend", e => {
     // slide to the clock
-    if (mode == "timer" && !isFullscreen && Math.abs(touchStart - touchEnd) > 100 && touchStart < touchEnd) {
+    if (mode == "timer" && !isFullscreen && Math.abs(touchStart.x - touchEnd.x) > 100 && Math.abs(touchStart.y - touchEnd.y) < 100 && touchStart.x < touchEnd.x) {
         clockBox.style.animation = "slide-from-left 0.2s ease-in-out"
 
         clockBtn.classList.add("button-focus")
@@ -238,7 +240,7 @@ document.body.addEventListener("touchend", e => {
 
         clockBox.classList.add("open")
         timerBox.classList.remove("open")
-    }else if (mode == "clock" && !isFullscreen && Math.abs(touchStart - touchEnd) > 100 && touchStart > touchEnd){
+    }else if (mode == "clock" && !isFullscreen && Math.abs(touchStart.x - touchEnd.x) > 100 && Math.abs(touchStart.y - touchEnd.y) < 100 && touchStart.x > touchEnd.x){
         timerBtn.classList.add("button-focus")
         clockBtn.classList.remove("button-focus")
 
