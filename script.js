@@ -23,7 +23,7 @@ const timerText = document.getElementById("timer-text")
 let mode = "clock"
 let rotateMode = "portrait"
 let isFullscreen = false
-let theme;
+let theme
 let darkVars = {
     bgColor: "#000000",
     objectColor: "#1B1D23",
@@ -42,6 +42,9 @@ let lightVars = {
     borderColor: "rgba(39, 41, 50, 0.4)",
     shadow: "0 0 20px rgba(0, 73, 245, 0.2)"
 }
+
+let touchStart
+let touchEnd
 
 
 if (window.matchMedia("(prefers-color-scheme: dark)").matches){
@@ -187,27 +190,63 @@ function changeTheme(){
 showDates()
 setInterval(showDates, 1000)
 
-// switch on the clock
+// click on the clock
 clockBtn.addEventListener("click", function(e){
-    clockBox.style.animation = "slide-from-left 0.2s ease-in-out"
+    if (mode == "timer"){
+        clockBox.style.animation = "slide-from-left 0.2s ease-in-out"
 
-    clockBtn.classList.add("button-focus")
-    timerBtn.classList.remove("button-focus")
+        clockBtn.classList.add("button-focus")
+        timerBtn.classList.remove("button-focus")
 
-    mode = "clock"
+        mode = "clock"
 
-    clockBox.classList.add("open")
-    timerBox.classList.remove("open")
+        clockBox.classList.add("open")
+        timerBox.classList.remove("open")
+    }
 })
-// switch on the timer
+
+// click on the timer
 timerBtn.addEventListener("click", function(e){
-    timerBtn.classList.add("button-focus")
-    clockBtn.classList.remove("button-focus")
+    if (mode == "clock"){
+        timerBtn.classList.add("button-focus")
+        clockBtn.classList.remove("button-focus")
 
-    mode = "timer"
+        mode = "timer"
 
-    timerBox.classList.add("open")
-    clockBox.classList.remove("open")
+        timerBox.classList.add("open")
+        clockBox.classList.remove("open")
+    }
+})
+
+// slide
+// slide on the clock
+document.body.addEventListener("touchstart", function(e){
+    touchStart = e.targetTouches[0].clientX;
+})
+document.body.addEventListener("touchmove", function(e) {
+    touchEnd = e.targetTouches[0].clientX;
+})
+document.body.addEventListener("touchend", e => {
+    // slide to the clock
+    if (mode == "timer" && !isFullscreen && Math.abs(touchStart - touchEnd) > 100 && touchStart < touchEnd) {
+        clockBox.style.animation = "slide-from-left 0.2s ease-in-out"
+
+        clockBtn.classList.add("button-focus")
+        timerBtn.classList.remove("button-focus")
+
+        mode = "clock"
+
+        clockBox.classList.add("open")
+        timerBox.classList.remove("open")
+    }else if (mode == "clock" && !isFullscreen && Math.abs(touchStart - touchEnd) > 100 && touchStart > touchEnd){
+        timerBtn.classList.add("button-focus")
+        clockBtn.classList.remove("button-focus")
+
+        mode = "timer"
+
+        timerBox.classList.add("open")
+        clockBox.classList.remove("open")
+    }
 })
 
 // play/stop button
