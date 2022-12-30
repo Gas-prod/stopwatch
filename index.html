@@ -9,15 +9,15 @@
 
     <title>STOPWATCH</title>
 
-    <link rel="icon" type="image/png" href="/stopwatch/img/icons/512x512.png">
-    <link rel="apple-touch-icon" href="/stopwatch/img/icons/192x192.png">
+    <link rel="icon" type="image/png" href="img/icons/512x512.png">
+    <link rel="apple-touch-icon" href="img/icons/192x192.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Sora:wght@400;700&display=swap" rel="stylesheet">
     
     <link href="style.css" rel="stylesheet">
-    <link rel="manifest" href="/stopwatch/manifest.json" defer>
+    <link rel="manifest" href="manifest.json" defer>
 
     <script src="nosleep.js"></script>
 </head>
@@ -110,7 +110,7 @@
             noSleep.enable()
 
             if("serviceWorker" in navigator) {
-                navigator.serviceWorker.register("/stopwatch/sw.js")
+                navigator.serviceWorker.register("sw.js")
             }
         })
     </script>
