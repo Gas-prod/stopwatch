@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A simple stopwatch app">
-    <meta name="theme-color" content="#0049F5">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)"  content="black">
 
     <title>STOPWATCH</title>
 
@@ -49,8 +50,11 @@
                     <h1 id="date-text">--h --min --s</h1>
                 </div>
     
-                <button id="clock-rotate-button">
+                <button class="rotate" id="clock-rotate-button">
                     <span class="material-symbols-rounded">stay_current_landscape</span>
+                </button>
+                <button class="fullscreen-button" id="clock-fullscreen-button">
+                    <span class="material-symbols-rounded">fullscreen</span>
                 </button>
             </div>
     
@@ -76,8 +80,11 @@
                     </div>
                 </div>
     
-                <button id="timer-rotate-button">
+                <button class="rotate" id="timer-rotate-button">
                     <span class="material-symbols-rounded">stay_current_landscape</span>
+                </button>
+                <button class="fullscreen-button" id="timer-fullscreen-button">
+                    <span class="material-symbols-rounded">fullscreen</span>
                 </button>
             </div>
         </div>

@@ -28,7 +28,11 @@
   "background_color": "#DDEBF8",
   "display": "standalone",
   "scope": "/stopwatch/",
-  "theme_color": "#0049F5",
+  "theme_color": "black",
+  "theme_colors": [
+      { "color": "black" },
+      { "color": "white", "media": "(prefers-color-scheme: light)" }
+  ],
   "orientation": "portrait",
   "description": "A simple stopwatch app",
   "lang": "en",

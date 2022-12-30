@@ -251,6 +251,17 @@ header h1
 {
     height: calc(100% - 100px);
 }
+.fullscreen
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    box-shadow: none;
+    border-radius: 0;
+}
 #timer-container
 {
     animation: slide-from-right 0.2s ease-in-out;
@@ -279,11 +290,29 @@ header h1
     align-items: center;
     font-variation-settings: 'FILL' 1;
 }
+.fullscreen-button
+{
+    right: 72px !important;
+    display: none !important;
+}
 .landscape > button
 {
     rotate: 90deg;
     left: 12px;
     bottom: 8px;
+}
+.landscape .fullscreen-button
+{
+    bottom: 56px;
+    display: flex !important;
+}
+.fullscreen .rotate
+{
+    display: none;
+}
+.fullscreen .fullscreen-button
+{
+    bottom: 12px;
 }
 #clock-container #date-text, #timer-container > div
 {
@@ -315,7 +344,6 @@ header h1
     display: flex;
     flex-direction: row;
     justify-content: center;
-    height: 36px;
 }
 #timer-container .buttons button
 {
@@ -333,6 +361,26 @@ header h1
 .landscape > div
 {
     transform: scale(1.6);
+}
+.fullscreen > div
+{
+    transform: scale(1);
+}
+.fullscreen h1
+{
+    font-size: 12vh !important;
+}
+#timer-container.fullscreen h1
+{
+    font-size: 16vh !important;
+}
+#timer-container.fullscreen p
+{
+    font-size: 32px;
+}
+#timer-container.fullscreen span
+{
+    font-size: 56px;
 }
 
 footer
@@ -448,6 +496,18 @@ footer a
     {
         font-size: 28px;
     }
+    .fullscreen > div
+    {
+        transform: scale(1) !important;
+    }
+    .fullscreen h1
+    {
+        font-size: 12vh !important;
+    }
+    #timer-container.fullscreen h1
+    {
+        font-size: 16vh !important;
+    }
 }
 
 @media only screen and (max-height: 750px) {
@@ -466,5 +526,16 @@ footer a
     .content
     {
         height: calc(100% - 120px);
+    }.fullscreen > div
+    {
+        transform: scale(1) !important;
+    }
+    .fullscreen h1
+    {
+        font-size: 12vh !important;
+    }
+    #timer-container.fullscreen h1
+    {
+        font-size: 16vh !important;
     }
 }

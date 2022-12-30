@@ -7,6 +7,9 @@ const resetBtn = document.getElementById("reset")
 const clockRotateBtn = document.getElementById("clock-rotate-button")
 const timerRotateBtn = document.getElementById("timer-rotate-button")
 
+const clockFullscreenBtn = document.getElementById("clock-fullscreen-button")
+const timerFullscreenBtn = document.getElementById("timer-fullscreen-button")
+
 const ThemeSwitcher = document.getElementById("theme-switcher")
 
 const clockBox = document.getElementById("clock-container")
@@ -19,6 +22,7 @@ const timerText = document.getElementById("timer-text")
 
 let mode = "clock"
 let rotateMode = "portrait"
+let isFullscreen = false
 let theme;
 let darkVars = {
     bgColor: "#000000",
@@ -138,6 +142,24 @@ function rotate(){
     rotateMode = o
 }
 
+function fullscreen(box){
+    if (isFullscreen && rotateMode == "landscape"){
+        isFullscreen = false
+
+        clockFullscreenBtn.innerHTML = '<span class="material-symbols-rounded">fullscreen</span>'
+        timerFullscreenBtn.innerHTML = '<span class="material-symbols-rounded">fullscreen</span>'
+
+        box.classList.remove("fullscreen")
+    }else if(rotateMode == "landscape"){
+        isFullscreen = true
+
+        clockFullscreenBtn.innerHTML = '<span class="material-symbols-rounded">fullscreen_exit</span>'
+        timerFullscreenBtn.innerHTML = '<span class="material-symbols-rounded">fullscreen_exit</span>'
+
+        box.classList.add("fullscreen")
+    }
+}
+
 function changeTheme(){
     ThemeSwitcher.innerHTML = `<span class="material-symbols-rounded">${theme}_mode</span>`
 
@@ -196,6 +218,10 @@ resetBtn.addEventListener("click", resetTimer)
 // rotate buttons
 clockRotateBtn.addEventListener("click", rotate)
 timerRotateBtn.addEventListener("click", rotate)
+
+// fullscreen buttons
+clockFullscreenBtn.addEventListener("click", function(){ fullscreen(clockBox) })
+timerFullscreenBtn.addEventListener("click", function(){ fullscreen(timerBox) })
 
 // theme switcher
 ThemeSwitcher.addEventListener("click", changeTheme)
