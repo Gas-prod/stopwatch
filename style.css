@@ -233,6 +233,7 @@ header h1
     background-color: var(--object-color);
     width: 100%;
     height: 200px;
+    min-height: 200px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -267,14 +268,13 @@ header h1
     animation: slide-from-right 0.2s ease-in-out;
     -webkit-animation: slide-from-right 0.2s ease-in-out;
 }
-.container h1
-{
-    font-size: 48px;
-    margin: 12px 0;
-}
 .container p 
 {
-    font-size: 24px;
+    font-size: 26px;
+}
+.landscape p
+{
+    font-size: 30px;
 }
 .container > button
 {
@@ -322,9 +322,22 @@ header h1
 {
     rotate: 90deg;
 }
-#clock-container h1
+#clock-container:not(.landscape) h1
 {
-    font-size: 36px;
+    font-size: 11vw;
+}
+#timer-container:not(.landscape) h1
+{
+    font-size: 14vw;
+}
+#clock-container.landscape h1
+{
+    font-size: 8vh;
+}
+#timer-container.landscape h1
+{
+    font-size: 10vh;
+    margin: 12px 0;
 }
 #timer-container > div
 {
@@ -332,8 +345,12 @@ header h1
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+}
+#timer-container.landscape > div
+{
+    justify-content: center;
 }
 .container > div
 {
@@ -353,30 +370,29 @@ header h1
     justify-content: center;
     align-items: center;
 }
+#timer-container .buttons span
+{
+    font-size: 44px;
+}
 #start-stop
 {
     margin-right: 24px;
 }
-
-.landscape > div
-{
-    transform: scale(1.6);
-}
-.fullscreen > div
-{
-    transform: scale(1);
-}
 .fullscreen h1
 {
-    font-size: 12vh !important;
+    font-size: 13vh !important;
 }
 #timer-container.fullscreen h1
 {
-    font-size: 16vh !important;
+    font-size: 17vh !important;
 }
 #timer-container.fullscreen p
 {
-    font-size: 32px;
+    font-size: 48px;
+}
+.landscape .buttons span
+{
+    font-size: 7vh !important;
 }
 #timer-container.fullscreen span
 {
@@ -478,47 +494,15 @@ footer a
     }
     header button
     {
-        right: 12px ;
+        right: 12px;
     }
-    #timer-text
+    .container.landscape h1
     {
-        font-size: 36px;
-    }
-    #clock-container h1
-    {
-        font-size: 24px;
-    }
-    .landscape h1
-    {
-        margin: 0;
-    }
-    #clock-container.landscape h1
-    {
-        font-size: 28px;
-    }
-    .fullscreen > div
-    {
-        transform: scale(1) !important;
-    }
-    .fullscreen h1
-    {
-        font-size: 12vh !important;
-    }
-    #timer-container.fullscreen h1
-    {
-        font-size: 16vh !important;
+        margin: 0 !important;
     }
 }
 
 @media only screen and (max-height: 750px) {
-    #clock-container.landscape > div
-    {
-        transform: scale(1.2); 
-    }
-    #timer-container.landscape > div
-    {
-        transform: scale(1.2);
-    }
     header
     {
         height: 60px;
@@ -526,16 +510,16 @@ footer a
     .content
     {
         height: calc(100% - 120px);
-    }.fullscreen > div
-    {
-        transform: scale(1) !important;
     }
-    .fullscreen h1
+}
+
+@media only screen and (min-width: 550px) {
+    #clock-container:not(.landscape) h1
     {
-        font-size: 12vh !important;
+        font-size: 66px;
     }
-    #timer-container.fullscreen h1
+    #timer-container:not(.landscape) h1
     {
-        font-size: 16vh !important;
+        font-size: 78px;
     }
 }

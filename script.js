@@ -80,7 +80,7 @@ function showDates(){
     let seconds = twoNumbers(date.getSeconds())
 
     // on the clock
-    dateText.innerHTML = `${hours}h ${minutes}min ${seconds}s`
+    dateText.innerHTML = `${hours}h ${minutes}m ${seconds}s`
 
     // on the timer
     minDateText.innerHTML = `${hours}h ${minutes}min`
@@ -223,6 +223,8 @@ timerBtn.addEventListener("click", function(e){
 document.body.addEventListener("touchstart", function(e){
     touchStart.x = e.targetTouches[0].clientX;
     touchStart.y = e.targetTouches[0].clientY;
+    touchEnd.x = e.targetTouches[0].clientX;
+    touchEnd.y = e.targetTouches[0].clientY;
 })
 document.body.addEventListener("touchmove", function(e) {
     touchEnd.x = e.targetTouches[0].clientX;
