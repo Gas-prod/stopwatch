@@ -80,7 +80,7 @@ function showDates(){
     let seconds = twoNumbers(date.getSeconds())
 
     // on the clock
-    dateText.innerHTML = `${hours}h ${minutes}m ${seconds}s`
+    dateText.innerHTML = `${hours}:${minutes}:${seconds}`
 
     // on the timer
     minDateText.innerHTML = `${hours}h ${minutes}min`

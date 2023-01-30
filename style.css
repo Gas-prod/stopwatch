@@ -244,6 +244,10 @@ header h1
     transition: height 0.3s ease-in-out;
     box-shadow: 0 0 0 1px var(--border-color), var(--shadow);
 }
+.container h1
+{
+    font-family: 'Share Tech Mono', 'Sora', monospace;
+}
 .open
 {
     display: flex;
@@ -324,19 +328,19 @@ header h1
 }
 #clock-container:not(.landscape) h1
 {
-    font-size: 11vw;
+    font-size: 16vw;
 }
 #timer-container:not(.landscape) h1
 {
-    font-size: 14vw;
+    font-size: 16vw;
 }
 #clock-container.landscape h1
 {
-    font-size: 8vh;
+    font-size: 13vh;
 }
 #timer-container.landscape h1
 {
-    font-size: 10vh;
+    font-size: 13vh;
     margin: 12px 0;
 }
 #timer-container > div
@@ -380,11 +384,7 @@ header h1
 }
 .fullscreen h1
 {
-    font-size: 13vh !important;
-}
-#timer-container.fullscreen h1
-{
-    font-size: 17vh !important;
+    font-size: 20vh !important;
 }
 #timer-container.fullscreen p
 {
@@ -516,10 +516,10 @@ footer a
 @media only screen and (min-width: 550px) {
     #clock-container:not(.landscape) h1
     {
-        font-size: 66px;
+        font-size: 85px;
     }
     #timer-container:not(.landscape) h1
     {
-        font-size: 78px;
+        font-size: 85px;
     }
 }
